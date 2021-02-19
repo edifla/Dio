@@ -1,1 +1,1 @@
-# Todos os projetos ligados a Digital Inovation One ficaram armazenados aqui
+# Todos os projetos ligados a Digital Innovation One ficaram armazenados aqui
