@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    background-image: url(Personagens/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.game{
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    /* Flex wrap faz com que quando atingir o limite máximo da largura a linha se quebre */
+    flex-wrap: wrap;
+    /* perspective mostra a perspectiva do usuário no eixo Z que é o eixo 3d, quanto maior a perspectiva maior é o efeito 3d.
+    So funciona junto de um transform-style: preserve-3d; */
+    perspective: 1000px;
+}
+.card{
+    /* Calc da altura e largura para caber no container do game, o -10px é a margin pois quando os elementos colidirem suas margins somarão 10px( 5px + 5px ) */
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px rgba(1,1,1,.3);
+    cursor: pointer;
+    transform: scale(1);
+    /* Não deixa o elemento achatado  */
+    transform-style: preserve-3d;
+    transition: transform  1s;
+}
+
+.card:active{
+    transform: scale(.97);
+    transition: transform .3s;
+
+}
+
+.front-card,
+.card-back{
+    width:100%;
+    height:100%;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.front-card{
+    transform: rotateY(360deg);
+}
+/* Animação de giro */
+.card.virar{
+    transform: rotateY(180deg);
+}
